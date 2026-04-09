@@ -1,0 +1,136 @@
+.footer {
+  background: #020617;
+  color: #fff;
+  padding: 6rem 0 3rem;
+  border-top: 1px solid var(--border);
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.brand h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.brandTagline {
+  color: var(--secondary);
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  font-size: 1rem;
+  max-width: 320px;
+}
+
+.addressBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.address h4 {
+  color: var(--accent);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.75rem;
+}
+
+.address p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--secondary);
+}
+
+.linksCol h4 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.list li {
+  font-size: 0.9rem;
+  color: var(--secondary);
+  transition: color 0.24s ease;
+}
+
+.list li:hover {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--secondary);
+  font-size: 0.95rem;
+  transition: color 0.24s ease;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+.contactEmail {
+  margin-top: 3rem;
+}
+
+.contactEmail h4 {
+  margin-bottom: 0.5rem;
+}
+
+.contactEmail a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.bottom {
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1100px) {
+  .footerGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
