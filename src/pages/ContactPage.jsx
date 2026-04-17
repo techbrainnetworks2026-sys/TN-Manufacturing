@@ -1,3 +1,4 @@
+import './ContactPage.css';
 import Contact from '../components/Contact.jsx';
 
 export default function ContactPage() {
@@ -7,3 +8,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

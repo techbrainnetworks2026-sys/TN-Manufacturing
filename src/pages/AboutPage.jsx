@@ -1,3 +1,4 @@
+import './AboutPage.css';
 export default function AboutPage() {
   const industries = [
     'Aerospace', 'Agriculture', 'Automotive', 'Chemical', 'Defence Technology',
@@ -86,3 +87,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

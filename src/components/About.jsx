@@ -1,3 +1,4 @@
+import './About.css';
 import styles from './About.module.css';
 
 const aboutItems = [
@@ -31,3 +32,4 @@ export default function About() {
     </section>
   );
 }
+

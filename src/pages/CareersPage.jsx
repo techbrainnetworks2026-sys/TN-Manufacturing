@@ -1,3 +1,4 @@
+import './CareersPage.css';
 const roles = [
   { title: 'Android Developer', skill: 'Java, Kotlin' },
   { title: 'CAD/CAM Designer', skill: 'Solidworks' },
@@ -58,3 +59,4 @@ export default function CareersPage() {
     </div>
   );
 }
+

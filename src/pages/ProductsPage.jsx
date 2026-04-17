@@ -1,3 +1,4 @@
+import './ProductsPage.css';
 import Products from '../components/Products.jsx';
 
 export default function ProductsPage() {
@@ -7,3 +8,4 @@ export default function ProductsPage() {
     </div>
   );
 }
+

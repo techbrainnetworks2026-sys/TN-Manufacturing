@@ -1,3 +1,4 @@
+import './IndustriesPage.css';
 export default function IndustriesPage() {
   const industries = [
     'Aerospace', 'Agriculture', 'Automotive', 'Chemical', 'Defence Technology',
@@ -38,3 +39,4 @@ export default function IndustriesPage() {
     </div>
   );
 }
+

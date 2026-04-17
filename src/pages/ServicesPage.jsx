@@ -1,10 +1,11 @@
+import './ServicesPage.css';
 import styles from './ServicesPage.module.css';
 
 const industries = [
-  "Aerospace", "Agriculture", "Automotive", "Chemical", "Defence Technology", 
-  "Education", "Energy & Utilities", "Entertainment and Media", "Finance", 
-  "Food Technology", "Healthcare", "Infrastructure", "Logistics", "Manufacturing", 
-  "Ocean Technology", "Oil and Gas", "Pharmaceutical", "Retail", "Sports", 
+  "Aerospace", "Agriculture", "Automotive", "Chemical", "Defence Technology",
+  "Education", "Energy & Utilities", "Entertainment and Media", "Finance",
+  "Food Technology", "Healthcare", "Infrastructure", "Logistics", "Manufacturing",
+  "Ocean Technology", "Oil and Gas", "Pharmaceutical", "Retail", "Sports",
   "Technology", "Telecommunication", "Textile", "Transportation", "Travel"
 ];
 
@@ -62,7 +63,7 @@ export default function ServicesPage() {
             <div className={styles.contactInfo}>
               <h2>Get in touch with us!</h2>
               <p>
-                Whether you are in education, finance, transportation, retail or health care, we have a solution for you. 
+                Whether you are in education, finance, transportation, retail or health care, we have a solution for you.
                 We develop both large and small projects and our solutions are always tailored to your needs - both in terms of budget and scope.
               </p>
 
@@ -98,7 +99,7 @@ export default function ServicesPage() {
                 </select>
                 <textarea placeholder="Special Note" rows="4"></textarea>
               </div>
-              <button type="submit" className="btn btn-primary" style={{width: '100%', marginTop: '1.5rem'}}>
+              <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '1.5rem' }}>
                 Send Message
               </button>
             </form>
@@ -124,3 +125,4 @@ export default function ServicesPage() {
     </div>
   );
 }
+

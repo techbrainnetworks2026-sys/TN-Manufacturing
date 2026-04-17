@@ -1,12 +1,13 @@
+import './Footer.css';
 import { NavLink } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 export default function Footer() {
   const industries = [
-    "Aerospace", "Agriculture", "Automotive", "Chemical", "Defence Technology", 
-    "Education", "Energy & Utilities", "Entertainment and Media", "Finance", 
-    "Food Technology", "Healthcare", "Infrastructure", "Logistics", "Manufacturing", 
-    "Ocean Technology", "Oil and Gas", "Pharmaceutical", "Retail", "Sports", 
+    "Aerospace", "Agriculture", "Automotive", "Chemical", "Defence Technology",
+    "Education", "Energy & Utilities", "Entertainment and Media", "Finance",
+    "Food Technology", "Healthcare", "Infrastructure", "Logistics", "Manufacturing",
+    "Ocean Technology", "Oil and Gas", "Pharmaceutical", "Retail", "Sports",
     "Technology", "Telecommunication", "Textile", "Transportation", "Travel"
   ];
 
@@ -24,7 +25,7 @@ export default function Footer() {
               <h2>TECHBRAIN NETWORKS</h2>
             </NavLink>
             <p className={styles.brandTagline}>Your all-in-one stop for digital products. We offer both digital and physical products that meet our customer's requirements.</p>
-            
+
             <div className={styles.addressBlock}>
               <div className={styles.address}>
                 <h4>India</h4>
@@ -71,7 +72,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        
+
         <div className={styles.bottom}>
           <p>© 2026 Techbrain Networks. All Rights Reserved.</p>
         </div>
@@ -79,3 +80,4 @@ export default function Footer() {
     </footer>
   );
 }
+

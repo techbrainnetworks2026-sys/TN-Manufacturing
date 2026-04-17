@@ -1,3 +1,4 @@
+import './Header.css';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
@@ -5,11 +6,12 @@ import styles from './Header.module.css';
 const navItems = [
   { to: '/', label: 'Home', route: true },
   { to: '/about', label: 'About', route: true },
+  { to: '/manufacturing', label: 'Manufacturing', route: true },
   { to: '/services', label: 'Services', route: true },
   { to: '/products', label: 'Products', route: true },
   { to: '/industries', label: 'Industries', route: true },
   { to: '/careers', label: 'Careers', route: true },
-  { to: '/contact', label: 'Contact Us', route: true },
+  { to: '/contact', label: 'Contact ', route: true },
 ];
 
 export default function Header() {
@@ -20,7 +22,7 @@ export default function Header() {
       <div className={`container ${styles.inner}`}>
         <NavLink className={styles.brand} to="/">
           <span className={styles.brandMark}>TB</span>
-          <span>Techbrain Networks</span>
+          <span>Techbrain Networks Manufacturing</span>
         </NavLink>
         <button
           className={styles.toggle}
@@ -28,9 +30,9 @@ export default function Header() {
           aria-expanded={open}
           onClick={() => setOpen((current) => !current)}
         >
-          <span />
-          <span />
-          <span />
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
         <nav className={`${styles.nav} ${open ? styles.navOpen : ''}`}>
           {navItems.map((item) => (
@@ -54,3 +56,4 @@ export default function Header() {
     </header>
   );
 }
+

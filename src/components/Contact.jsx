@@ -1,3 +1,4 @@
+import './Contact.css';
 
 
 export default function Contact() {
@@ -114,10 +115,10 @@ export default function Contact() {
               <div className="grid md:grid-cols-2 gap-6">
 
                 {[
-                  { id: 'name', label: "Full Name", type: "text", placeholder: "e.g. John Doe" },
-                  { id: 'company', label: "Company", type: "text", placeholder: "e.g. Tech Corp" },
-                  { id: 'email', label: "Business Email", type: "email", placeholder: "john@company.com" },
-                  { id: 'mobile', label: "Mobile Number", type: "tel", placeholder: "+91 00000 00000" }
+                  { id: 'name', label: "Full Name", type: "text", className: "text-black", placeholder: "e.g. John Doe" },
+                  { id: 'company', label: "Company", type: "text", className: "text-black", placeholder: "e.g. Tech Corp" },
+                  { id: 'email', label: "Business Email", type: "email", className: "text-black", placeholder: "john@company.com" },
+                  { id: 'mobile', label: "Mobile Number", type: "tel", className: "text-black", placeholder: "+91 00000 00000" }
                 ].map((field) => (
                   <div key={field.id} className="relative group">
                     <label htmlFor={field.id} className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 ml-1">

@@ -1,8 +1,9 @@
+import './Hero.css';
 import styles from './Hero.module.css';
 
 export default function Hero() {
   return (
-    <section id="hero" className={`${styles.hero} section`}> 
+    <section id="hero" className={styles.hero}> 
       <div className={styles.overlay} />
       <div className={`container ${styles.content}`}>
         <div className={styles.copyArea}>
@@ -24,3 +25,4 @@ export default function Hero() {
     </section>
   );
 }
+

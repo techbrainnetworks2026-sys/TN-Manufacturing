@@ -1,3 +1,4 @@
+import './FAQ.css';
 const faqs = [
   {
     question: 'How do you support digital transformation?',
@@ -91,3 +92,4 @@ export default function FAQ() {
     </section>
   );
 }
+

@@ -1,3 +1,4 @@
+import './Services.css';
 const services = [
   {
     title: 'Software Development',
@@ -42,3 +43,4 @@ export default function Services() {
     </section>
   );
 }
+

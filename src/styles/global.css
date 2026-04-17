@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+* {
+  margin-top: 0px;
+}
+
 :root {
   --bg: #020617;
   --surface: #0f172a;
@@ -15,7 +19,7 @@
   --glass-bg: rgba(15, 23, 42, 0.65);
   --accent-glow: 0 0 25px rgba(250, 204, 21, 0.2);
   --accent-gradient: linear-gradient(135deg, #facc15 0%, #eab308 100%);
-  
+
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
@@ -30,7 +34,28 @@
   box-sizing: border-box;
 }
 
-html, body {
+.text-black {
+  color: black;
+  border-color: black;
+}
+
+.text-black:focus {
+  color: black;
+  border-color: black;
+}
+
+.text-black:active {
+  color: black;
+  border-color: black;
+}
+
+.text-black:hover {
+  color: black;
+  border-color: black;
+}
+
+html,
+body {
   margin: 0;
   min-height: 100%;
   background: var(--bg);
@@ -41,7 +66,10 @@ body {
   line-height: 1.6;
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   font: inherit;
 }
 
@@ -83,7 +111,9 @@ img {
   font-weight: 700;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
 }
 
@@ -369,7 +399,9 @@ p {
 }
 
 @media (max-width: 980px) {
-  .grid-2, .grid-3 {
+
+  .grid-2,
+  .grid-3 {
     grid-template-columns: 1fr;
   }
 }

@@ -1,3 +1,4 @@
+import './HomePage.css';
 import Hero from '../components/Hero.jsx';
 import About from '../components/About.jsx';
 import Products from '../components/Products.jsx';
@@ -17,3 +18,4 @@ export default function HomePage() {
     </>
   );
 }
+
