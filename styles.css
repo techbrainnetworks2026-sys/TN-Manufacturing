@@ -43,7 +43,7 @@ button, input, textarea, select {
   margin: 0 auto;
 }
 
-..site-header {
+.site-header {
   position: sticky;
   top: 0;
   z-index: 50;
@@ -179,12 +179,14 @@ h3 {
 }
 
 .hero-section {
+  margin-top: 0px;
   position: relative;
   min-height: 88vh;
   display: grid;
   align-items: center;
   overflow: hidden;
   color: #fff;
+ 
 }
 
 .hero-section::before {
