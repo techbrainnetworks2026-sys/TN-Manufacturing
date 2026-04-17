@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { products } from '../data/products.js';
 import styles from './ProductDetailPage.module.css';
 import { useEffect } from 'react';
+import { ChevronLeft, ArrowRight, Layers, Cpu, Code, Database, Zap, ShieldCheck } from 'lucide-react';
 
 export default function ProductDetailPage() {
   const { id } = useParams();
@@ -10,7 +11,7 @@ export default function ProductDetailPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [id]);
 
   if (!product) {
     return (
@@ -25,35 +26,53 @@ export default function ProductDetailPage() {
 
   return (
     <div className={styles.detailPage}>
-      {/* Hero Section */}
+      {/* Super Premium Hero Section */}
       <section className={styles.hero}>
-        <img src={product.image} alt={product.title} className={styles.heroImage} />
-        <div className={styles.heroOverlay}></div>
+        <div className={styles.heroBackground}>
+          <img src={product.image} alt={product.title} />
+          <div className={styles.gradientOverlay}></div>
+        </div>
+        
         <div className={`container ${styles.heroContent}`}>
           <Link to="/products" className={styles.backButton}>
-            ← Back to Solutions
+            <ChevronLeft size={18} /> Back to Solutions
           </Link>
-          <span className={styles.category}>Enterprise Manufacturing</span>
+          
+          <div className={styles.heroBadge}>
+            <ShieldCheck size={16} /> Enterprise Grade Solution
+          </div>
+          
           <h1 className={styles.title}>{product.title}</h1>
           <p className={styles.tagline}>{product.description}</p>
+          
+          <div className={styles.heroActions}>
+            <Link to="/contact" className={styles.btnPrimary}>
+              Request Technical Demo <ArrowRight size={18} />
+            </Link>
+            <a href="#architecture" className={styles.btnSecondary}>
+              View Architecture
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* About & Highlights */}
-      <section className={styles.contentSection}>
+      {/* Strategic Impact & Highlights */}
+      <section className={styles.section}>
         <div className="container">
-          <div className={styles.architectureGrid}>
-            <div>
-              <span className="section-label">Overview</span>
-              <h2 style={{ marginBottom: '1.5rem' }}>Strategic Impact</h2>
-              <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#94a3b8' }}>
-                {product.about}
-              </p>
+          <div className={styles.impactGrid}>
+            <div className={styles.impactContent}>
+              <span className={styles.sectionLabel}>Overview</span>
+              <h2 className={styles.sectionTitle}>Strategic Impact</h2>
+              <p className={styles.leadText}>{product.about}</p>
             </div>
-            <div className={styles.grid}>
+            
+            <div className={styles.highlightsContainer}>
               {product.highlights.map((highlight, index) => (
-                <div key={index} className={styles.card} style={{ padding: '1.5rem' }}>
-                  <p style={{ margin: 0, fontWeight: '500' }}>{highlight}</p>
+                <div key={index} className={styles.highlightCard}>
+                  <div className={styles.highlightIcon}>
+                    <Zap size={24} />
+                  </div>
+                  <p>{highlight}</p>
                 </div>
               ))}
             </div>
@@ -61,32 +80,46 @@ export default function ProductDetailPage() {
         </div>
       </section>
 
-      {/* Features & Advantages */}
-      <section className={`${styles.contentSection} bg-glass`}>
+      {/* Deep Dive Features */}
+      <section className={`${styles.section} ${styles.bgDarker}`}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <span className="section-label">Capabilities</span>
-            <h2>Features & Advantages</h2>
+          <div className={styles.centerHeading}>
+            <span className={styles.sectionLabel}>Capabilities</span>
+            <h2 className={styles.sectionTitle}>Core Features & Benefits</h2>
           </div>
-          <div className={styles.grid}>
-            <div className={styles.card}>
-              <h3 className={styles.cardTitle}>Core Features</h3>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
+          
+          <div className={styles.featuresGrid}>
+            <div className={styles.featureColumn}>
+              <h3 className={styles.columnTitle}><Layers className={styles.titleIcon} /> Key Features</h3>
+              <ul className={styles.featureList}>
                 {product.features.map((feature, i) => (
-                  <li key={i} style={{ marginBottom: '1rem', display: 'flex', gap: '1rem' }}>
-                    <span style={{ color: 'var(--accent)' }}>✓</span>
-                    <span style={{ color: '#94a3b8' }}>{feature}</span>
+                  <li key={i}>
+                    <div className={styles.checkIcon}></div>
+                    <span>{feature}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className={styles.card}>
-              <h3 className={styles.cardTitle}>Key Advantages</h3>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
+            
+            <div className={styles.featureColumn}>
+              <h3 className={styles.columnTitle}><ArrowRight className={styles.titleIcon} /> Business Benefits</h3>
+              <ul className={styles.featureList}>
+                {product.benefits.map((benefit, i) => (
+                  <li key={i}>
+                    <div className={styles.checkIcon}></div>
+                    <span>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className={styles.featureColumn}>
+              <h3 className={styles.columnTitle}><ShieldCheck className={styles.titleIcon} /> Strategic Advantages</h3>
+              <ul className={styles.featureList}>
                 {product.advantages.map((advantage, i) => (
-                  <li key={i} style={{ marginBottom: '1rem', display: 'flex', gap: '1rem' }}>
-                    <span style={{ color: 'var(--accent)' }}>⚡</span>
-                    <span style={{ color: '#94a3b8' }}>{advantage}</span>
+                  <li key={i}>
+                    <div className={styles.checkIcon}></div>
+                    <span>{advantage}</span>
                   </li>
                 ))}
               </ul>
@@ -95,58 +128,67 @@ export default function ProductDetailPage() {
         </div>
       </section>
 
-      {/* 20-Year Scope */}
-      <section className="container">
-        <div className={styles.scopeSection}>
-          <span className="section-label">Future Ready</span>
-          <h2 className={styles.scopeTitle}>20-Year Vision & Scope</h2>
-          <p className={styles.scopeText}>{product.scope20Year}</p>
+      {/* 20-Year Scope / Vision */}
+      <section className={styles.visionSection}>
+        <div className={styles.visionBackground}></div>
+        <div className={`container ${styles.visionContent}`}>
+          <span className={styles.sectionLabelAccent}>Future Ready</span>
+          <h2 className={styles.visionTitle}>20-Year Vision & Scope</h2>
+          <p className={styles.visionText}>{product.scope20Year}</p>
         </div>
       </section>
 
       {/* Architecture Section */}
-      <section className={styles.contentSection}>
+      <section id="architecture" className={styles.section}>
         <div className="container">
-          <span className="section-label">Technical Blueprint</span>
-          <h2 style={{ marginBottom: '3rem' }}>System Architecture</h2>
+          <span className={styles.sectionLabel}>Technical Blueprint</span>
+          <h2 className={styles.sectionTitle}>System Architecture</h2>
           
           <div className={styles.architectureGrid}>
-            <div>
-              <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '2rem', color: '#94a3b8' }}>
+            <div className={styles.architectureInfo}>
+              <p className={styles.leadText}>
                 {product.architecture.description}
               </p>
-              <h4 style={{ marginBottom: '1rem' }}>Technology Stack</h4>
+              
+              <h4 className={styles.stackHeading}>Technology Stack</h4>
               <div className={styles.techStack}>
                 {product.architecture.stack.map((tech, i) => (
-                  <span key={i} className={styles.techTag}>{tech}</span>
+                  <span key={i} className={styles.techBadge}>
+                    <Code size={14} /> {tech}
+                  </span>
                 ))}
               </div>
             </div>
             
-            <div className={styles.card} style={{ borderLeft: '4px solid var(--accent)' }}>
-              <h3 style={{ marginBottom: '2rem' }}>Implementation Layers</h3>
-              {product.architecture.layers.map((layer, index) => (
-                <div key={index} className={styles.step}>
-                  <div className={styles.stepNumber}>{index + 1}</div>
-                  <div>
-                    <h4 style={{ margin: '0 0 0.25rem 0' }}>{layer.name}</h4>
-                    <p style={{ margin: 0, color: '#94a3b8', fontSize: '0.9rem' }}>{layer.details}</p>
+            <div className={styles.layersContainer}>
+              <h3 className={styles.layersTitle}><Database className={styles.titleIcon} /> Implementation Layers</h3>
+              <div className={styles.layersTimeline}>
+                {product.architecture.layers.map((layer, index) => (
+                  <div key={index} className={styles.layerStep}>
+                    <div className={styles.layerNode}>
+                      <Cpu size={18} />
+                    </div>
+                    <div className={styles.layerContent}>
+                      <h4>{layer.name}</h4>
+                      <p>{layer.details}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className={styles.contentSection} style={{ textAlign: 'center' }}>
+      <section className={styles.ctaSection}>
         <div className="container">
-          <div className={styles.card} style={{ background: 'linear-gradient(135deg, var(--accent), #7928ca)', color: '#fff' }}>
-            <h2 style={{ color: '#fff', marginBottom: '1rem' }}>Ready to Transform Your Factory?</h2>
-            <p style={{ marginBottom: '2rem', opacity: 0.9 }}>Connect with our solutions architecture team to discuss your specific requirements.</p>
-            <Link to="/contact" className="btn" style={{ background: '#fff', color: 'var(--accent)' }}>
-              Request Technical Consultation
+          <div className={styles.ctaCard}>
+            <div className={styles.ctaGlow}></div>
+            <h2>Ready to Transform Your Production?</h2>
+            <p>Connect with our solutions architecture team to discuss your specific requirements.</p>
+            <Link to="/contact" className={styles.ctaButton}>
+              Consult an Architect
             </Link>
           </div>
         </div>
@@ -154,4 +196,3 @@ export default function ProductDetailPage() {
     </div>
   );
 }
-
